@@ -22,7 +22,7 @@ IFS=`printf '\n\t'`
 cd $(dirname $0)
 SCRIPT_DIR=`pwd`
 cd $SCRIPT_DIR/../package/test
-mvn jbi:projectDeploy 
+mvn jbi:projectDeploy -DforceUpdate=true
 cd $SCRIPT_DIR/../core/testclient/jms/swingclient 
 mvn -e exec:java -Dexec.mainClass=org.openengsb.swingclient.Start
 
